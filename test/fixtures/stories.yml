@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  publication_date: 2021-01-22 09:20:56
+  slug: MyString
+  unique_id: 1
+  user: one
+
+two:
+  title: MyString
+  publication_date: 2021-01-22 09:20:56
+  slug: MyString
+  unique_id: 1
+  user: two
