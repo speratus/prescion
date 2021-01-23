@@ -1,15 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% require 'bcrypt' %>
 
 one:
-  name: MyString
-  email: MyString
-  username: MyString
-  password_digest: MyString
-  bio: MyText
+  name: Test guy
+  email: iamtest@universe.test.space
+  username: testguy
+  password_digest: <%= BCrypt::Password.create('hello world') %>
+  bio: I am just a simple test with simple aspirations
 
 two:
-  name: MyString
-  email: MyString
-  username: MyString
-  password_digest: MyString
-  bio: MyText
+  name: Second test guy
+  email: iamanothertest@universe.test.space
+  username: secondtestguy
+  password_digest: <% BCrypt::Password.create('hello world again') %>
+  bio: What he said
