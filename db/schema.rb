@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_153555) do
+ActiveRecord::Schema.define(version: 2021_01_29_165134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,15 @@ ActiveRecord::Schema.define(version: 2021_01_22_153555) do
     t.index ["user_id"], name: "index_stories_on_user_id"
   end
 
+  create_table "story_series", force: :cascade do |t|
+    t.bigint "story_id", null: false
+    t.bigint "series_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["series_id"], name: "index_story_series_on_series_id"
+    t.index ["story_id"], name: "index_story_series_on_story_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -94,4 +103,6 @@ ActiveRecord::Schema.define(version: 2021_01_22_153555) do
   add_foreign_key "model_tags", "tags"
   add_foreign_key "series", "users"
   add_foreign_key "stories", "users"
+  add_foreign_key "story_series", "series"
+  add_foreign_key "story_series", "stories"
 end
