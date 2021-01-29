@@ -1,8 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  name: The simple truths of Life
+  description: A short series about what is most important for living well in the modern era.
   user: one
 
 two:

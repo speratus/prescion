@@ -1,10 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: One Story to Rule them
   publication_date: 2021-01-22 09:20:56
-  slug: MyString
-  unique_id: 1
+  slug: one-story-to-rule-them
+  unique_id: 45125
   user: one
 
 two:
