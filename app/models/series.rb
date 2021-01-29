@@ -6,4 +6,6 @@ class Series < ApplicationRecord
 
   has_many :story_series
   has_many :stories, through: :story_series
+
+  validates :name, :description, :user_id, presence: true
 end

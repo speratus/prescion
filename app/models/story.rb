@@ -6,4 +6,6 @@ class Story < ApplicationRecord
 
   has_one :story_series
   has_one :series, through: :story_series
+
+  validates :title, :slug, :user_id, :unique_id, presence: true
 end
