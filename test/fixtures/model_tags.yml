@@ -1,11 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+tag1:
   model: one
-  model_type: Model
-  tag: one
+  model_type: Story
+  tag: advice
 
-two:
-  model: two
-  model_type: Model
-  tag: two
+tag2:
+  model: one
+  model_type: Story
+  tag: tricks
+
+tag3:
+  model: one
+  model_type: Series
+  tag: lifehacks
+
+tag4:
+  model: one
+  model_type: Series
+  tag: advice
