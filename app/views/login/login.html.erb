@@ -1,2 +1,27 @@
-<h1>Login#login</h1>
-<p>Find me in app/views/login/login.html.erb</p>
+<section class="container">
+    <div class="box">
+        <h1 class="title">Enter your Login Info</h1>
+        <form>
+            <%= render partial: "controls/input", locals: {
+                type: "text", 
+                id: "username", 
+                name: "username", 
+                label_text: "Username", 
+                placeholder: "Username",
+            }%>
+            <%= render partial: "controls/input", locals: {
+                label_text: "Password",
+                id: "password",
+                name: "password",
+                placeholder: "Password",
+                type: "password",
+            }%>
+
+            <div class="field">
+                <div class="control">
+                    <button class="button is-info">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
