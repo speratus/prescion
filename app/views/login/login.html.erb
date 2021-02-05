@@ -1,27 +1,22 @@
 <section class="container">
     <div class="box">
         <h1 class="title">Enter your Login Info</h1>
-        <form>
+        <%= form_with model: @user do |form| %>
             <%= render partial: "controls/input", locals: {
-                type: "text", 
-                id: "username", 
-                name: "username", 
-                label_text: "Username", 
-                placeholder: "Username",
-            }%>
-            <%= render partial: "controls/input", locals: {
-                label_text: "Password",
-                id: "password",
-                name: "password",
-                placeholder: "Password",
-                type: "password",
+                form: form,
+                attribute: :username,
+                label: "Username",
+                placeholder: 'Username'
             }%>
 
-            <div class="field">
-                <div class="control">
-                    <button class="button is-info">Submit</button>
-                </div>
-            </div>
-        </form>
+            <%= render partial: "controls/password", locals: {
+                form: form,
+                attribute: :password,
+                label: 'Password',
+                placeholder: 'Password'
+            } %>
+
+            <%= form.submit "Login", class: "button is-info" %>
+        <% end %>
     </div>
 </section>
