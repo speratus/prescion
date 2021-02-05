@@ -8,4 +8,6 @@ class Series < ApplicationRecord
   has_many :stories, through: :story_series
 
   validates :name, :description, :user_id, presence: true
+
+  has_one_attached :cover_image
 end
