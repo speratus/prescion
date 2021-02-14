@@ -1,2 +1,43 @@
-<h1>Login#signup</h1>
-<p>Find me in app/views/login/signup.html.erb</p>
+<section class="container">
+    <div class="box">
+        <h1 class="title">Please Enter your details to sign up</h1>
+        <%= form_with model: @user do |form| %>
+            <%= render partial: 'controls/input', locals: {
+                form: form,
+                attribute: :name,
+                label: 'Full Name',
+                placeholder: 'Jon Doe',
+            }%>
+
+            <%= render partial: 'controls/input', locals: {
+                form: form,
+                attribute: :username,
+                label: "Username",
+                placeholder: "Username",
+            }%>
+
+            <%= render partial: 'controls/input', locals: {
+                form: form,
+                attribute: :email,
+                label: 'Email Address',
+                placeholder: 'hello@world.org',
+            }%>
+
+            <%= render partial: 'controls/password', locals: {
+                form: form,
+                attribute: :password,
+                label: 'Password',
+                placeholder: 'Password',
+            }%>
+
+            <%= render partial: 'controls/password', locals: {
+                form: form,
+                attribute: :password_confirmation,
+                label: 'Confirm Password',
+                placeholder: 'Confirm Password',
+            }%>
+
+            <%= form.submit "Sign Up", class: 'button is-info'%>
+        <% end %>
+    </div>
+</section>
