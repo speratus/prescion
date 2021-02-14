@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
-    helper_method :x_render
 
-    def x_render(variable, default)
-        local_variables.include?(variable) ? local_variable_get(variable) : default
+    def logged_in?
+        !!session[:user_id]
+    end
+
+    def current_user
+        @current_user ||= User.find_by_id(session[:user_id]) if logged_in?
     end
 end
