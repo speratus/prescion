@@ -9,7 +9,7 @@ class Story < ApplicationRecord
 
   validates :title, :slug, :user_id, :unique_id, presence: true
 
-  has_one_attached :content
+  has_rich_text :content
   has_one_attached :cover_image
 
   has_many_attached :images
