@@ -1,7 +1,7 @@
 <section class="container">
     <div class="box">
         <h1 class="title">Enter your Login Info</h1>
-        <%= form_with model: @user do |form| %>
+        <%= form_with url: create_session_path do |form| %>
             <%= render partial: "controls/input", locals: {
                 form: form,
                 attribute: :username,
