@@ -3,9 +3,7 @@ class LoginController < ApplicationController
   end
 
   def create_session
-    user = User.find_by(username: login_params[:username])
-
-    if user && user.authenticate(login_params[:password])
+    if user = User.authenticate(login_params[:username], login_params[:password])
       session[:user_id] = user.id
       redirect_to "/"
     else
