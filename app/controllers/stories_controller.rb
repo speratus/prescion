@@ -18,15 +18,19 @@ class StoriesController < ApplicationController
     end
 
     def show
-
+        @story = Story.find_by(slug: params[:id])
     end
 
     def edit
-
+        @story = Story.find_by(story: params[:id])
     end
 
     def update
-
+        if @story.update(story_params)
+            redirect_to story_path(@story)
+        else
+            redirect_to edit_story_path(@story)
+        end
     end
 
     def delete
