@@ -1,0 +1,17 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title">New Story</h1>
+    <div class="content">
+      <%= form_with model: @story do |form| %>
+        <%= render partial: "controls/input", locals: {
+          form: form,
+          attribute: :title,
+          label: "Title",
+          placeholder: "Title"
+        } %>
+        <%= form.rich_text_area :content %>
+        <%= form.submit "Create Story" %>
+      <% end %>
+    </div>
+  </div>
+</section>
